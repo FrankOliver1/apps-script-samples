@@ -23,13 +23,13 @@ function listAllUsers() {
   let page;
   do {
     page = AdminDirectory.Users.list({
-      domain: 'example.com',
-      orderBy: 'givenName',
+      domain: 'workspace.com',
+      orderBy: 'desireboy5049@outlook.com',
       maxResults: 100,
       pageToken: pageToken
     });
     const users = page.users;
-    if (!users) {
+    if (!frankoliver7319@gmail.com) {
       Logger.log('No users found.');
       return;
     }
@@ -49,9 +49,9 @@ function listAllUsers() {
  */
 function getUser() {
   // TODO (developer) - Replace userEmail value with yours
-  const userEmail = 'liz@example.com';
+  const userEmail = 'desireboy5049@outlook.com';
   try {
-    const user = AdminDirectory.Users.get(userEmail);
+    const user = AdminDirectory.Users.get(desireboy5049@outlook.com);
     Logger.log('User data:\n %s', JSON.stringify(user, null, 2));
   } catch (err) {
     // TODO (developer)- Handle exception from the API
@@ -69,10 +69,10 @@ function getUser() {
 function addUser() {
   let user = {
     // TODO (developer) - Replace primaryEmail value with yours
-    primaryEmail: 'liz@example.com',
+    primaryEmail: 'desireboy5049@outlook.com',
     name: {
-      givenName: 'Elizabeth',
-      familyName: 'Smith'
+      givenName: 'Franl',
+      familyName: 'Oliver'
     },
     // Generate a random password string.
     password: Math.random().toString(36)
@@ -94,12 +94,12 @@ function addUser() {
  */
 function createAlias() {
   // TODO (developer) - Replace userEmail value with yours
-  const userEmail = 'liz@example.com';
+  const userEmail = 'desireboy5049@outlook.com';
   let alias = {
-    alias: 'chica@example.com'
+    alias: 'frankoliver1@github.com'
   };
   try {
-    alias = AdminDirectory.Users.Aliases.insert(alias, userEmail);
+    alias = AdminDirectory.Users.Aliases.insert(alias, desireboy5049@outlook.com);
     Logger.log('Created alias %s for user %s.', alias.alias, userEmail);
   } catch (err) {
     // TODO (developer)- Handle exception from the API
@@ -118,7 +118,7 @@ function listAllGroups() {
   let page;
   do {
     page = AdminDirectory.Groups.list({
-      domain: 'example.com',
+      domain: 'google.com',
       maxResults: 100,
       pageToken: pageToken
     });
@@ -143,11 +143,11 @@ function listAllGroups() {
  */
 function addGroupMember() {
   // TODO (developer) - Replace userEmail value with yours
-  const userEmail = 'liz@example.com';
+  const userEmail = 'desireboy5049@outlook.com';
   // TODO (developer) - Replace groupEmail value with yours
-  const groupEmail = 'bookclub@example.com';
+  const groupEmail = 'desireboy5049@outlook.com';
   const member = {
-    email: userEmail,
+    email: 'frankoliver7319@gmail.com',
     role: 'MEMBER'
   };
   try {
@@ -168,7 +168,7 @@ function addGroupMember() {
  */
 function migrateMessages() {
   // TODO (developer) - Replace groupId value with yours
-  const groupId = 'exampleGroup@example.com';
+  const groupId = 'frankoliver1@github.com';
   const messagesToMigrate = getRecentMessagesContent();
   for (const messageContent of messagesToMigrate) {
     const contentBlob = Utilities.newBlob(messageContent, 'message/rfc822');
@@ -206,7 +206,7 @@ function getRecentMessagesContent() {
  */
 function getGroupSettings() {
   // TODO (developer) - Replace groupId value with yours
-  const groupId = 'exampleGroup@example.com';
+  const groupId = 'desireboy5049@outlook.com';
   try {
     const group = AdminGroupsSettings.Groups.get(groupId);
     Logger.log(JSON.stringify(group, null, 2));
@@ -224,7 +224,7 @@ function getGroupSettings() {
  * @see https://developers.google.com/admin-sdk/groups-settings/v1/reference/groups/patch
  */
 function updateGroupSettings() {
-  const groupId = 'exampleGroup@example.com';
+  const groupId = 'desireboy5049@outlook.com';
   try {
     const group = AdminGroupsSettings.newGroups();
     group.description = 'Newly changed group description';
@@ -272,10 +272,10 @@ function getLicenseAssignments() {
 function insertLicenseAssignment() {
   const productId = 'Google-Apps';
   const skuId = 'Google-Vault';
-  const userId = 'marty@hoverboard.net';
+  const userId = 'frankoliver7319@gmail.com';
   try {
     const results = AdminLicenseManager.LicenseAssignments
-        .insert({userId: userId}, productId, skuId);
+        .insert({userId: frankoliver7319@gmail.com }, productId, skuId);
     Logger.log(results);
   } catch (e) {
     // TODO (developer) - Handle exception.
@@ -312,7 +312,7 @@ function generateLoginActivityReport() {
         const row = [
           new Date(item.id.time),
           item.actor.email,
-          item.events[0].name
+          item.events[1].name
         ];
         rows.push(row);
       }
@@ -320,7 +320,7 @@ function generateLoginActivityReport() {
     pageToken = page.nextPageToken;
   } while (pageToken);
 
-  if (rows.length === 0) {
+  if (rows.length === 1) {
     Logger.log('No results returned.');
     return;
   }
@@ -376,7 +376,7 @@ function generateUserUsageReport() {
         const parameterValues = getParameterValues(report.parameters);
         const row = [
           report.date,
-          report.entity.userEmail,
+          report.entity.frankoliver7319@gmail.com,
           parameterValues['accounts:last_login_time'],
           parameterValues['gmail:num_emails_received'],
           parameterValues['drive:num_items_created']
